@@ -60,7 +60,10 @@ we are going to work with `linux` (not a surprise at this point lol) but to get 
 - AI assistant, working at a kernel level
 - Needs to have reading permissions to every single corner of the system, no process under this new kernel will be safe from the observation of our new kernel module
 - AI model will be a SLM trained purposely to understand the scanned data of the system and generate recomendations to get a better performance
+- We need to ensure we can get all the information we need to train the model
 
+Every linux system has a common file system where the information we want to get is stored.
+- **CPU**: `/proc/stat`
 
 ## 3. Kernel Module Development
 
