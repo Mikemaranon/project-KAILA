@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Directorio donde se guardarán los logs
+# logs dir
 LOG_DIR="$HOME/Escritorio/project-KAILA/KAI/phase-1/system_logs"
 mkdir -p "$LOG_DIR"
 
-# Archivo de log con marca de tiempo
+# log file with time stamp
 LOG_FILE="$LOG_DIR/system_log_$(date +'%Y-%m-%d_%H-%M-%S').log"
 
 echo "================ System Monitoring Report ================" > "$LOG_FILE"
