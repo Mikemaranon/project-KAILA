@@ -25,7 +25,7 @@ Additionally, install useful packages for file system manipulation and cross-com
 ```bash
 sudo apt install -y bc cpio kmod
 ```
-We have to ensure we are in the correct directory, in my case: `~/Escritorio/TFM/`
+We have to ensure we are in the correct directory, in my case: `~/Escritorio/project-KAILA/`
 
 ### II. Download and Configure the Kernel
 
@@ -62,19 +62,23 @@ we are going to work with `linux` (not a surprise at this point lol) but to get 
 - AI model will be a SLM trained purposely to understand the scanned data of the system and generate recomendations to get a better performance
 - We need to ensure we can get all the information we need to train the model
 
-Every linux system has a common file system where the information we want to get is stored.
-- **CPU**: `/proc/stat`
+Every Linux system has a common file system where the information we want to get is stored. go to this [README](/KAI/phase-1/README.md) to see further information. 
+Once we can gather every data we want of our system, we should develop a [script](/KAI/phase-1/scrapper.sh) in `bash` to automate the process in lots of different linux enviroments that serve different purposes.
+
+## 2. Model training
+
+not here yet `¯\_(ツ)_/¯`
 
 ## 3. Kernel Module Development
 
 Create a simple module that interacts with /proc and allows process inspection.  
-This module is located at [aikm_module.c](/kernel/phase-3/aikm_module.c)
+This module is located at [aikm_module.c](/KAI/phase-3/aikm_module.c)
 
-Then we need to compile the new module creating a [Makefile](/kernel/phase-3/Makefile.c)
+Then we need to compile the new module creating a [Makefile](/KAI/phase-3/Makefile.c)
 
 copile it:
 ```bash
-cd /project-directory/kernel/phase-3/ && make
+cd /project-directory/KAI/phase-3/ && make
 ```
 Load the module:
 ```bash
