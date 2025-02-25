@@ -56,7 +56,7 @@ sudo reboot
 
 ## 1. Understanding Linux Kernel
 
-we are going to work with `linux` (not a surprise at this point lol) but to get the best performance we are going to need a deeper understanding of how this kernel works. firstly we have to define the `objectives` of this first part of the proyect.
+we are going to work with `linux` (not a surprise at this point lol) but to get the best performance we are going to need a deeper understanding of how this kernel works. Firstly we have to define the `objectives` of this first part of the project.
 - AI assistant, working at a kernel level
 - Needs to have reading permissions to every single corner of the system, no process under this new kernel will be safe from the observation of our new kernel module
 - AI model will be a SLM trained purposely to understand the scanned data of the system and generate recomendations to get better performance
