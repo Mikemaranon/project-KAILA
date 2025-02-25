@@ -59,7 +59,7 @@ sudo reboot
 we are going to work with `linux` (not a surprise at this point lol) but to get the best performance we are going to need a deeper understanding of how this kernel works. firstly we have to define the `objectives` of this first part of the proyect.
 - AI assistant, working at a kernel level
 - Needs to have reading permissions to every single corner of the system, no process under this new kernel will be safe from the observation of our new kernel module
-- AI model will be a SLM trained purposely to understand the scanned data of the system and generate recomendations to get a better performance
+- AI model will be a SLM trained purposely to understand the scanned data of the system and generate recomendations to get better performance
 - We need to ensure we can get all the information we need to train the model
 
 Every Linux system has a common file system where the information we want to get is stored. go to this [README](/KAI/phase-1/README.md) to see further information. 
@@ -67,11 +67,14 @@ Once we can gather every data we want of our system, we should develop a [script
 
 ## 2. Model training
 
-not here yet `¯\_(ツ)_/¯`
+Training the model is the most important part of this project, as the way we optimize it will determine if we can really fit it into the system's kernel. 
+to get an optimal decision, we have to explore all the posibilities. see some of the options in this [README](/KAI/phase-2/README.md)
+
+Every model has lots of pros and cons, but after a deeper research, `DeepSeek-R1` can be considered the winner for many reasons that I will explain in the readme, even if it wont tell me what happened in Tiananmen square in 1989 :( 
 
 ## 3. Kernel Module Development
 
-Create a simple module that interacts with /proc and allows process inspection.  
+Create a simple module that interacts with `/proc` and allows process inspection.  
 This module is located at [aikm_module.c](/KAI/phase-3/aikm_module.c)
 
 Then we need to compile the new module creating a [Makefile](/KAI/phase-3/Makefile.c)
