@@ -1,6 +1,11 @@
-# SLM implementation
+# SLM training
 
 for this project we are going to use the model [DistilBERT](https://huggingface.co/docs/transformers/model_doc/distilbert) through the `transformers` library
+
+# SLM implementation
+
+Having the model already trained and ready for use, we have to implement it
+
 ```bash
 pip install transformers
 ```
@@ -21,3 +26,4 @@ inputs = tokenizer(input_text, return_tensors='pt')
 outputs = model(**inputs)
 print(outputs)
 ```
+
