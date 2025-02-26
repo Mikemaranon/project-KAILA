@@ -1,4 +1,4 @@
-# KAI: An AI powered Linux Kernel
+# KAIM: An AI powered Linux Kernel
 
 > **Warning**
 > This project involves modifying and compiling the Linux kernel. Ensure you have proper backups and understand the risks involved. Proceed with caution.
@@ -62,26 +62,26 @@ we are going to work with `linux` (not a surprise at this point lol) but to get 
 - AI model will be a SLM trained purposely to understand the scanned data of the system and generate recomendations to get better performance
 - We need to ensure we can get all the information we need to train the model
 
-Every Linux system has a common file system where the information we want to get is stored. go to this [README](/KAI/phase-1/README.md) to see further information. 
-Once we can gather every data we want of our system, we should develop a [script](/KAI/phase-1/scrapper.sh) in `bash` to automate the process in lots of different linux enviroments that serve different purposes.
+Every Linux system has a common file system where the information we want to get is stored. go to this [README](/KAIM/phase-1/README.md) to see further information. 
+Once we can gather every data we want of our system, we should develop a [script](/KAIM/phase-1/scrapper.sh) in `bash` to automate the process in lots of different linux enviroments that serve different purposes.
 
 ## 2. Model training
 
 Training the model is the most important part of this project, as the way we optimize it will determine if we can really fit it into the system's kernel. 
-to get an optimal decision, we have to explore all the posibilities. see some of the options in this [README](/KAI/phase-2/README.md)
+to get an optimal decision, we have to explore all the posibilities. see some of the options in this [README](/KAIM/phase-2/README.md)
 
 Every model has lots of pros and cons, but after a deeper research, `DeepSeek-R1` can be considered the winner for many reasons that I will explain in the readme, even if it wont tell me what happened in Tiananmen square in 1989 :( 
 
 ## 3. Kernel Module Development
 
 Create a simple module that interacts with `/proc` and allows process inspection.  
-This module is located at [aikm_module.c](/KAI/phase-3/aikm_module.c)
+This module is located at [aikm_module.c](/KAIM/phase-3/aikm_module.c)
 
-Then we need to compile the new module creating a [Makefile](/KAI/phase-3/Makefile.c)
+Then we need to compile the new module creating a [Makefile](/KAIM/phase-3/Makefile.c)
 
 copile it:
 ```bash
-cd /project-directory/KAI/phase-3/ && make
+cd /project-directory/KAIM/phase-3/ && make
 ```
 Load the module:
 ```bash
@@ -95,3 +95,26 @@ After testing it, remove it
 ```bash
 sudo rmmod aikm_module
 ```
+## 4. Implementing the aikm Command
+
+To interact with the module, we will create a new command `aikm`, which allows querying system information and executing optimizations as per AI recommendations.
+
+The command will be implemented as a `user-space program` that interacts with the kernel module via /proc/aikm_info. The source code and compilation instructions will be added to `aikm.c`
+
+## 5. AI Integration and Resource Management
+
+The AI model must be efficiently loaded into memory and executed without causing excessive CPU or RAM usage. We will:
+
+- Establish a `resource limit` to prevent kernel panics.
+- Use a `dedicated partition` for `AI storage` and `training data`.
+- Implement a `low-power inference` mode to minimize system impact.
+- Integrate a `feedback mechanism` to allow manual administrator oversight of AI suggestions.
+
+## 6. Testing and Debugging
+
+Extensive testing is required to ensure `stability and security`. The following steps will be conducted:
+
+- **Unit testing**: ensure `kernel module` functions work as intended.
+- **Performance benchmarks** analyze `CPU` and `memory` impact.
+- **Stress testing** to ensure the module does not crash under `heavy load`.
+- **Security audits** to verify proper `permission handling` and `prevent potential vulnerabilities`.
