@@ -1,2 +1,0 @@
-# KAILA: The KAI based Linux Agent 
-KAILA (Kernel Artificial Inteligence Linux Agent) is a prototype system. Since the KAI proyect has some limitations due to the native execution in the kernel, KAILA will serve as an aditional User-based Agent powered by a stronger LLM that will optimize every process made by the KAI kernel module
