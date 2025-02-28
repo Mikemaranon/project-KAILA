@@ -5,7 +5,7 @@
 
 This project has the main purpose of developing a linux distribution from the open-source kernel `linux-source`
 in which i am going to introduce a new module that hosts a SLM purposely trained to help the user optimyze
-the system, creating a new comand called `aikm` with a list of parameters for a better interaction between the
+the system, creating a new comand called `kaim` with a list of parameters for a better interaction between the
 module and the user.
 
 the final objective is simple: having a new distribution that can use the module to effectively know every single
@@ -75,7 +75,7 @@ Every model has lots of pros and cons, but after a deeper research, `DeepSeek-R1
 ## 3. Kernel Module Development
 
 Create a simple module that interacts with `/proc` and allows process inspection.  
-This module is located at [aikm_module.c](/phase-3/aikm_module.c)
+This module is located at [kaim_module.c](/phase-3/kaim_module.c)
 
 Then we need to compile the new module creating a [Makefile](/phase-3/Makefile.c)
 
@@ -85,21 +85,21 @@ cd /project-directory/phase-3/ && make
 ```
 Load the module:
 ```bash
-sudo insmod aikm_module.ko
+sudo insmod kaim_module.ko
 ```
 Verify its functionality:-
 ```bash
-cat /proc/aikm_info
+cat /proc/kaim_info
 ```
 After testing it, remove it
 ```bash
-sudo rmmod aikm_module
+sudo rmmod kaim_module
 ```
-## 4. Implementing the aikm Command
+## 4. Implementing the kaim Command
 
-To interact with the module, we will create a new command `aikm`, which allows querying system information and executing optimizations as per AI recommendations.
+To interact with the module, we will create a new command `kaim`, which allows querying system information and executing optimizations as per AI recommendations.
 
-The command will be implemented as a `user-space program` that interacts with the kernel module via /proc/aikm_info. The source code and compilation instructions will be added to `aikm.c`
+The command will be implemented as a `user-space program` that interacts with the kernel module via /proc/kaim_info. The source code and compilation instructions will be added to `kaim.c`
 
 ## 5. AI Integration and Resource Management
 

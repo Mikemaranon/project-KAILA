@@ -1,4 +1,4 @@
-obj-m += aikm_module.o
+obj-m += kaim_module.o
 KDIR := /lib/modules/$(shell uname -r)/build
 PWD := $(shell pwd)
 
